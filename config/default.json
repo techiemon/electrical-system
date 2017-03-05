@@ -1,0 +1,12 @@
+{
+  "host": "localhost",
+  "port": 3030,
+  "mongodb": "mongodb://localhost:27017/electricalSystem",
+  "public": "../public/",
+  "auth": {
+    "token": {
+      "secret": "AiGVgTqhIgh6kdssOYnq0eEB4wJcpk5+JbHxN12KKKOAvuxLrcQLMAijZ26RxhxIMmBCzQxXQ+0hG7DlAY/WyQ=="
+    },
+    "local": {}
+  }
+}
