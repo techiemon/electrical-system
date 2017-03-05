@@ -23,7 +23,7 @@
   "scripts": {
     "test": "npm run jshint && npm run mocha",
     "jshint": "jshint src/. test/. --config",
-    "start": "node src/",
+    "start": "babel-node src/",
     "mocha": "mocha test/ --recursive"
   },
   "dependencies": {
@@ -47,6 +47,8 @@
     "jsonwebtoken": "^7.3.0",
     "mongoose": "^4.8.5",
     "passport": "^0.3.2",
+    "request": "^2.80.0",
+    "request-promise": "^4.1.1",
     "serve-favicon": "^2.4.1",
     "winston": "^2.3.1"
   },
