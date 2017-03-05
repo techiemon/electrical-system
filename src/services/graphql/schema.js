@@ -83,13 +83,13 @@ type Load {
 	label: String!
 	type: String!
 	image: Image # Load has one Image
-	switches: [Switch] # Load may have many Switches , single or 2 way
+	switches: [Toggle] # Load may have many Toggles , single or 2 way
 }
 
-type Switch {
+type Toggle { # Hell, can't call this switch
 	_id: String!
 	createdAt: String
 	label: String!
-	image: Image # Switch has one Image
+	image: Image # Toggle has one Image
 }
 `;
