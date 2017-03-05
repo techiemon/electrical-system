@@ -93,4 +93,105 @@ type Toggle { # Can't call this switch
 	label: String!
 	image: Image # Toggle has one Image
 }
+
+# types for mutations
+type AuthPayload {
+  token: String # JSON Web Token
+  data: User
+}
+
+
+
+# the schema allows the following queries:
+type RootQuery {
+	// viewer: User
+	// buildings: [Building]
+	// building(_id: String!): Building
+	// rooms(buildingId: String!): [Room]
+	// room(_id: String!): Room
+	// panels(buildingId: String!): [Panel]
+	// panel(_id: String!): Panel
+	// breakers(panelId: String!): [Breaker]
+	// roomLoads(roomId: String!): [Load]
+	// breakerLoads(breakerId: String!): [Load]
+	// toggle(_id: String!): Toggle
+}
+
+# this schema allows the following mutations:
+type RootMutation {
+	// signUp (
+	// 	username: String!
+  //   password: String!
+  //   firstName: String
+  //   lastName: String
+	// ): User
+
+	// logIn (
+	// 	username: String!
+	// 	password: String!
+	// ): AuthPayload
+
+	// createBuilding (
+	// 	name: String!
+	// 	address1: String
+	// 	address2: String
+	// 	city: String
+	// 	state: String
+	// ): Building
+
+	// updateBuilding (
+	// 	_id: String!
+	// 	name: String!
+	// 	address1: String
+	// 	address2: String
+	// 	city: String
+	// 	state: String
+	// ): Building
+
+	// deleteBuilding (
+	// 	_id: String!
+	// }
+
+	// createRoom (
+	// 	label: String!
+	// ): Room
+
+	// updateRoom (
+	// 	_id: String!
+	// 	label: String!
+	// ): Room
+
+	// deleteRoom (
+	// 	_id: String!
+	// ): Room
+
+	// createPanel (
+	// 	buildingId: String!
+	// 	name: String!
+	// 	rating: Int!
+	// 	slots: Int!
+	// ): Panel
+
+	// updatePanel (
+	// 	_id: String!
+	// 	buildingId: String!
+	// 	name: String!
+	// 	rating: Int!
+	// 	slots: Int!
+	// ): Panel
+
+	// deletePanel (
+	// 	_id: String!
+	// ): Panel
+
+	# more todo, but lets seed and see if the whole thing hasn't blown up
+
+}
+
+# we need to tell the server which types represent the root query
+# and root mutation types. We call them RootQuery and RootMutation by convention.
+schema {
+	query: RootQuery
+	mutation: RootMutation
+}
 `;
