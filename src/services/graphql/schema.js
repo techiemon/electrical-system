@@ -50,6 +50,7 @@ type Building {
 type Panel {
 	_id: String!
 	createdAt: String
+	name: String!
 	rating: Int!
 	slots: Int!
 	image: Image # Panel has one Image
@@ -86,7 +87,7 @@ type Load {
 	switches: [Toggle] # Load may have many Toggles , single or 2 way
 }
 
-type Toggle { # Hell, can't call this switch
+type Toggle { # Can't call this switch
 	_id: String!
 	createdAt: String
 	label: String!

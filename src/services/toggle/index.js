@@ -8,11 +8,7 @@ module.exports = function() {
   const app = this;
 
   const options = {
-    Model: toggle,
-    paginate: {
-      default: 5,
-      max: 25
-    }
+    Model: toggle
   };
 
   // Initialize our service with any options it requires
