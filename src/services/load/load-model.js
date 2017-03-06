@@ -12,6 +12,7 @@ const loadSchema = new Schema({
   createdAt: { type: Date, 'default': Date.now },
   updatedAt: { type: Date, 'default': Date.now },
 	breakerId: { type: String, required: true },
+	roomId: { type: String, required: true },
 	label: { type: String, required: true },
 	type: { type: String, required: true }
 });

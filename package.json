@@ -24,6 +24,7 @@
     "test": "npm run jshint && npm run mocha",
     "jshint": "jshint src/. test/. --config",
     "start": "babel-node src/",
+    "dev": "nodemon src/ --exec babel-node --presets es2015",
     "mocha": "mocha test/ --recursive"
   },
   "dependencies": {
@@ -46,6 +47,7 @@
     "graphql-tools": "^0.10.1",
     "jsonwebtoken": "^7.3.0",
     "mongoose": "^4.8.5",
+    "nodemon": "^1.11.0",
     "passport": "^0.3.2",
     "request": "^2.80.0",
     "request-promise": "^4.1.1",

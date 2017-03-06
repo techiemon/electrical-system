@@ -19,6 +19,7 @@ module.exports = function() {
 
   app.configure(authentication);
   app.configure(user);
+
 	app.configure(building);
 	app.configure(panel);
 	app.configure(room);
@@ -27,5 +28,6 @@ module.exports = function() {
 	app.configure(load);
 	app.configure(toggle);
 	app.configure(viewer);
+	
   app.configure(graphql);
 };
