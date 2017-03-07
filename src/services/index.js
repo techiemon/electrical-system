@@ -1,4 +1,6 @@
 'use strict';
+const mongoose = require('mongoose');
+const user = require('./user');
 const viewer = require('./viewer');
 const toggle = require('./toggle');
 const load = require('./load');
@@ -9,8 +11,7 @@ const panel = require('./panel');
 const building = require('./building');
 const graphql = require('./graphql');
 const authentication = require('./authentication');
-const user = require('./user');
-const mongoose = require('mongoose');
+
 module.exports = function() {
   const app = this;
 
@@ -28,6 +29,6 @@ module.exports = function() {
 	app.configure(load);
 	app.configure(toggle);
 	app.configure(viewer);
-	
+
   app.configure(graphql);
 };

@@ -16,10 +16,10 @@ module.exports = function(){
   const app = this;
 
   // Initialize our service with any options it requires
-  app.use('/viewers', new Service());
+  app.use('/viewer', new Service());
 
   // Get our initialize service to that we can bind hooks
-  const viewerService = app.service('/viewers');
+  const viewerService = app.service('/viewer');
 
   // Set up our before hooks
   viewerService.before(hooks.before);
