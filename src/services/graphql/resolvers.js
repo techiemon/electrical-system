@@ -109,7 +109,11 @@ export default function Resolvers() {
 				return Viewer.find(context);
 			},
 			buildings(root, args, context) {
-				return Buildings.find({});
+				return Buildings.find({
+					// query: {},
+					provider: context.provider,
+					token: context.token
+				});
 			}
 		},
 
