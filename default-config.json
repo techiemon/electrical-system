@@ -1,7 +1,7 @@
 {
 	"appDb" : {
 		"host": "localhost",
-		"db": "testit",
+		"db": "electricalSystem",
 		"port": 27017
 	}
 }

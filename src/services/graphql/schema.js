@@ -7,7 +7,6 @@ enum LoadType {
 
 type User {
   _id: String! # Indicadive of MongoDB , use id if you'd like to use SQL
-	createdAt: String
   firstName: String
   lastName: String
   username: String!
