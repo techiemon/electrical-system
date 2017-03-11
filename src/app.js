@@ -13,6 +13,8 @@ const bodyParser = require('body-parser');
 const socketio = require('feathers-socketio');
 const middleware = require('./middleware');
 const services = require('./services');
+const seeder = require('feathers-seeder');
+const seederConfig = require('./seeder-config');
 
 const app = feathers();
 
@@ -25,6 +27,7 @@ app.use(compress())
   .use('/', serveStatic( app.get('public') ))
   .use(bodyParser.json())
   .use(bodyParser.urlencoded({ extended: true }))
+	.configure(seeder(seederConfig))
   .configure(hooks())
   .configure(rest())
   .configure(socketio())

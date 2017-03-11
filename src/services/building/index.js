@@ -17,6 +17,15 @@ module.exports = function() {
   // Get our initialize service to that we can bind hooks
   const buildingService = app.service('/buildings');
 
+	// app.use('user/:userId/buildings', {
+	// 	create(data, params) {
+	// 		const buildingData = Object.assign(data, {
+	// 			userId: params.userId
+	// 		});
+	// 		return buildingService.create(buildingData);
+	// 	}
+	// });
+
   // Set up our before hooks
   buildingService.before(hooks.before);
 
