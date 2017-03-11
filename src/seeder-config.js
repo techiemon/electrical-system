@@ -11,7 +11,7 @@ const seedPanel = function(building, seed) {
 			slots: 20
 		},
 		callback(panel, seed) {
-			console.info(`Happy panel ${panel._id}!`);
+			console.info(`Panel created ${panel._id}!`);
 		}
 	});
 };
@@ -29,7 +29,7 @@ const seedBuildings = function(user, seed) {
 			state: '{{address.state}}'
 		},
 		callback(building, seed) {
-			console.info(`Happy building ${building._id}!`);
+			console.info(`Building created: ${building._id}!`);
 			return seedPanel(building, seed);
 		}
 	});
@@ -47,6 +47,7 @@ module.exports = {
         password: 'password'
       },
 			callback(user, seed) {
+				console.info(`User created: ${user._id}!`);
 				return seedBuildings(user, seed);
 			}
     },
