@@ -11,8 +11,8 @@ const Schema = mongoose.Schema;
 const loadSchema = new Schema({
   createdAt: { type: Date, 'default': Date.now },
   updatedAt: { type: Date, 'default': Date.now },
-	breakerId: { type: String, required: true },
-	roomId: { type: String, required: true },
+	breakerId: Schema.Types.ObjectId,
+	roomId: Schema.Types.ObjectId,
 	label: { type: String, required: true },
 	type: { type: String, required: true }
 });

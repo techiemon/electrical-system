@@ -11,7 +11,7 @@ const Schema = mongoose.Schema;
 const breakerSchema = new Schema({
   createdAt: { type: Date, 'default': Date.now },
   updatedAt: { type: Date, 'default': Date.now },
-	panelId: { type: String, required: true },
+	panelId: Schema.Types.ObjectId,
 	label: { type: String, required: true },
 	description: { type: String, required: false },
 	rating: { type: Number, required: true }

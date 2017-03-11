@@ -1,7 +1,6 @@
 var mongoose = require('mongoose');
 
 const seedPanel = function(building, seed) {
-	console.info(`What panel? ${building._id}`);
 	return seed({
 		path: 'panels',
 		template: {

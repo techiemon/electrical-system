@@ -11,7 +11,7 @@ const Schema = mongoose.Schema;
 const buildingSchema = new Schema({
   createdAt: { type: Date, 'default': Date.now },
   updatedAt: { type: Date, 'default': Date.now },
-	userId: { type: String, required: true },
+	userId: Schema.Types.ObjectId,
 	name: { type: String, required: true },
 	address1: { type: String, required: false },
 	address2: { type: String, required: false },

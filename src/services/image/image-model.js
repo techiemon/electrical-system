@@ -11,9 +11,9 @@ const Schema = mongoose.Schema;
 const imageSchema = new Schema({
   createdAt: { type: Date, 'default': Date.now },
   updatedAt: { type: Date, 'default': Date.now },
-	panelId: { type: String, required: false },
-	loadId: { type: String, required: false },
-	toggleId: { type: String, required: false },
+	panelId: Schema.Types.ObjectId,
+	loadId: Schema.Types.ObjectId,
+	toggleId: Schema.Types.ObjectId,
 	url: { type: String, required: true }
 });
 

@@ -11,7 +11,7 @@ const Schema = mongoose.Schema;
 const roomSchema = new Schema({
   createdAt: { type: Date, 'default': Date.now },
   updatedAt: { type: Date, 'default': Date.now },
-	buildingId: { type: String, required: true },
+	buildingId: Schema.Types.ObjectId,
 	label: { type: String, required: true }
 });
 

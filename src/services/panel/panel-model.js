@@ -11,7 +11,7 @@ const Schema = mongoose.Schema;
 const panelSchema = new Schema({
   createdAt: { type: Date, 'default': Date.now },
   updatedAt: { type: Date, 'default': Date.now },
-	buildingId: { type: String, required: true },
+	buildingId: Schema.Types.ObjectId,
 	name: { type: String, required: true },
 	rating: { type: Number, required: true },
 	slots: { type: Number, required: true },
