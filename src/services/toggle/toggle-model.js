@@ -11,6 +11,7 @@ const Schema = mongoose.Schema;
 const toggleSchema = new Schema({
   createdAt: { type: Date, 'default': Date.now },
   updatedAt: { type: Date, 'default': Date.now },
+	userId: Schema.Types.ObjectId,
 	loadId: Schema.Types.ObjectId,
 	text: { type: String, required: true }
 });
