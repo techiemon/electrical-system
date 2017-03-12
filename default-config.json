@@ -1,7 +1,0 @@
-{
-	"appDb" : {
-		"host": "localhost",
-		"db": "electricalSystem",
-		"port": 27017
-	}
-}

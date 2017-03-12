@@ -109,14 +109,8 @@ export default function Resolvers() {
 				return Viewer.find(context);
 			},
 			buildings(root, args, context) {
-				context.query = {
-
-				};
-				return Buildings.find({
-					// query: {},
-					provider: context.provider,
-					token: context.token
-				});
+				context.query = {};
+				return Buildings.find(context);
 			},
 			panels(root, { buildingId }, context) {
 				context.query = {

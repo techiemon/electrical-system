@@ -6,16 +6,39 @@ const auth = require('feathers-authentication').hooks;
 
 exports.before = {
   all: [
-    // auth.verifyToken(),
-    // auth.populateUser(),
-    // auth.restrictToAuthenticated()
+		// This hook validates the auth token.
+    auth.verifyToken(),
+		// This hook loads the current user.
+    auth.populateUser(),
+		// With this hook, you shall not pass if not authenticated.
+    auth.restrictToAuthenticated()
   ],
-  find: [],
-  get: [],
-  create: [],
-  update: [],
-  patch: [],
-  remove: []
+  find: [
+		// This hook appends userId: _id from the User object
+		//{ idField: '_id', as: 'userId' } are the defaults as well
+		auth.queryWithCurrentUser()
+	],
+  get: [
+		// This hook checks that the user ID matches the record userId
+		auth.restrictToOwner()
+	],
+  create: [
+		// This hook applies the current user to the create query
+		// so you don't need to set it in your mutation
+		auth.associateCurrentUser({as: 'userId'})
+	],
+  update: [
+		// This hook checks that the user ID matches the record userId
+		auth.restrictToOwner()
+	],
+  patch: [
+		// This hook checks that the user ID matches the record userId
+		auth.restrictToOwner()
+	],
+  remove: [
+		// This hook checks that the user ID matches the record userId
+		auth.restrictToOwner()
+	]
 };
 
 exports.after = {
