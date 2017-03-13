@@ -201,29 +201,29 @@ export default function Resolvers() {
 				return Buildings.update(args, context);
 			},
 
-			// deleteBuilding(root, { _id }, context) {
-      //   return Buildings.remove({_id}, context);
-      // },
+			deleteBuilding(root, { _id }, context) {
+        return Buildings.remove({_id}, context);
+      },
 
 			createRoom(root, args, context) {
-				return Room.create(args, context);
+				return Rooms.create(args, context);
 			},
 			updateRoom(root, args, context) {
-				return Room.update(args, context);
+				return Rooms.update(args, context);
 			},
-			// deleteRoom(root, { _id }, context) {
-      //   return Room.remove(_id, context);
-      // },
-			
+			deleteRoom(root, { _id }, context) {
+        return Rooms.remove(_id, context);
+      },
+
 			createPanel(root, args, context) {
-				return Panel.create(args, context);
+				return Panels.create(args, context);
 			},
 			updatePanel(root, args, context) {
-				return Panel.update(args, context);
+				return Panels.update(args, context);
 			},
-			// deletePanel(root, { _id }, context) {
-      //   return Panel.remove(_id, context);
-      // }
+			deletePanel(root, { _id }, context) {
+        return Panels.remove(_id, context);
+      }
 
 
 		}

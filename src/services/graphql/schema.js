@@ -128,7 +128,9 @@ type RootMutation {
 		state: String
 	): Building
 
-	#delete
+	deleteBuilding (
+		_id: String!
+	): Building
 
 	createRoom (
 		label: String!
@@ -139,7 +141,9 @@ type RootMutation {
 		label: String!
 	): Room
 
-	#delete
+	deleteRoom (
+		_id: String!
+	): Room
 
 	createPanel (
 		buildingId: String!
@@ -154,6 +158,10 @@ type RootMutation {
 		name: String!
 		rating: Int!
 		slots: Int!
+	): Panel
+
+	deletePanel (
+		_id: String!
 	): Panel
 
 	# more todo, but lets seed and see if the whole thing hasn't blown up
