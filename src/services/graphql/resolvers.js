@@ -196,11 +196,9 @@ export default function Resolvers() {
 			createBuilding(root, args, context) {
 				return Buildings.create(args, context);
 			},
-
 			updateBuilding(root, args, context) {
 				return Buildings.update(args, context);
 			},
-
 			deleteBuilding(root, { _id }, context) {
         return Buildings.remove({_id}, context);
       },
@@ -223,8 +221,37 @@ export default function Resolvers() {
 			},
 			deletePanel(root, { _id }, context) {
         return Panels.remove(_id, context);
-      }
+      },
 
+			createBreaker(root, args, context) {
+				return Breakers.create(args, context);
+			},
+			updateBreaker(root, args, context) {
+				return Breakers.update(args, context);
+			},
+			deleteBreaker(root, { _id }, context) {
+        return Breakers.remove(_id, context);
+      },
+
+			createLoad(root, args, context) {
+				return Loads.create(args, context);
+			},
+			updateLoad(root, args, context) {
+				return Loads.update(args, context);
+			},
+			deleteLoad(root, { _id }, context) {
+        return Loads.remove(_id, context);
+      },
+
+			createToggle(root, args, context) {
+				return Toggles.create(args, context);
+			},
+			updateToggle(root, args, context) {
+				return Toggles.update(args, context);
+			},
+			deleteToggle(root, { _id }, context) {
+        return Toggles.remove(_id, context);
+      }
 
 		}
 

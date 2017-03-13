@@ -164,7 +164,58 @@ type RootMutation {
 		_id: String!
 	): Panel
 
-	# more todo, but lets seed and see if the whole thing hasn't blown up
+	createBreaker (
+		panelId: String!
+		label: String!
+		description: String
+		rating: Int!
+	): Breaker
+
+	updateBreaker (
+		_id: String!
+		panelId: String!
+		label: String!
+		description: String
+		rating: Int!
+	): Breaker
+
+	deleteBreaker (
+		_id: String!
+	): Breaker
+
+	createLoad (
+		breakerId: String!
+		roomId: String!
+		label: String!
+		type: String!
+	): Load
+
+	updateLoad (
+		_id: String!
+		breakerId: String!
+		roomId: String!
+		label: String!
+		type: String!
+	): Load
+
+	deleteLoad (
+		_id: String!
+	): Load
+
+	createToggle (
+		loadId: String!
+		text: String!
+	): Toggle
+
+	updateToggle (
+		_id: String!
+		loadId: String!
+		text: String!
+	): Toggle
+
+	deleteToggle (
+		_id: String!
+	): Toggle
 
 }
 
