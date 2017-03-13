@@ -111,6 +111,53 @@ type RootMutation {
 		password: String!
 	): AuthPayload
 
+	createBuilding (
+		name: String!
+		address1: String
+		address2: String
+		city: String
+		state: String
+	): Building
+
+	updateBuilding (
+		_id: String!
+		name: String!
+		address1: String
+		address2: String
+		city: String
+		state: String
+	): Building
+
+	#delete
+
+	createRoom (
+		label: String!
+	): Room
+
+	updateRoom (
+		_id: String!
+		label: String!
+	): Room
+
+	#delete
+
+	createPanel (
+		buildingId: String!
+		name: String!
+		rating: Int!
+		slots: Int!
+	): Panel
+
+	updatePanel (
+		_id: String!
+		buildingId: String!
+		name: String!
+		rating: Int!
+		slots: Int!
+	): Panel
+
+	# more todo, but lets seed and see if the whole thing hasn't blown up
+
 }
 
 # we need to tell the server which types represent the root query

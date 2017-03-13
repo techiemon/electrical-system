@@ -183,7 +183,7 @@ export default function Resolvers() {
 
 		RootMutation: {
 			signUp(root, args, context) {
-				return Users.create(args)
+				return Users.create(args, context);
 			},
 			logIn(root, {username, password}, context) {
 				return localRequest({
@@ -191,7 +191,41 @@ export default function Resolvers() {
 					method: 'POST',
 					body: { username, password }
 				});
-			}
+			},
+
+			createBuilding(root, args, context) {
+				return Buildings.create(args, context);
+			},
+
+			updateBuilding(root, args, context) {
+				return Buildings.update(args, context);
+			},
+
+			// deleteBuilding(root, { _id }, context) {
+      //   return Buildings.remove({_id}, context);
+      // },
+
+			createRoom(root, args, context) {
+				return Room.create(args, context);
+			},
+			updateRoom(root, args, context) {
+				return Room.update(args, context);
+			},
+			// deleteRoom(root, { _id }, context) {
+      //   return Room.remove(_id, context);
+      // },
+			
+			createPanel(root, args, context) {
+				return Panel.create(args, context);
+			},
+			updatePanel(root, args, context) {
+				return Panel.update(args, context);
+			},
+			// deletePanel(root, { _id }, context) {
+      //   return Panel.remove(_id, context);
+      // }
+
+
 		}
 
   }
