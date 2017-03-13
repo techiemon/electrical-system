@@ -85,15 +85,16 @@ type AuthPayload {
 type RootQuery {
 	viewer: User
 	buildings: [Building]
-	building(_id: String!): Building
+	building(id: String!): Building
 	rooms(buildingId: String!): [Room]
-	room(_id: String!): Room
+	room(id: String!): Room
 	panels(buildingId: String!): [Panel]
-	panel(_id: String!): Panel
+	panel(id: String!): Panel
 	breakers(panelId: String!): [Breaker]
+	breaker(id: String!): Breaker
 	roomLoads(roomId: String!): [Load]
 	breakerLoads(breakerId: String!): [Load]
-	toggle(_id: String!): Toggle
+	toggle(id: String!): Toggle
 }
 
 # this schema allows the following mutations:

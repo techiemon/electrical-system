@@ -20,7 +20,8 @@ exports.before = {
 	],
   get: [
 		// This hook checks that the user ID matches the record userId
-		auth.restrictToOwner()
+		auth.restrictToOwner() // GET IS FAILING TO ADD HOOKS, can't pass context either.
+		// auth.queryWithCurrentUser()
 	],
   create: [
 		// This hook applies the current user to the create query

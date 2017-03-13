@@ -112,12 +112,73 @@ export default function Resolvers() {
 				context.query = {};
 				return Buildings.find(context);
 			},
+			building(root, { id }, context) {
+				// get refuses to apply restrictToOwner or any hooks. Feathers bug :( won't accept context either.
+				// This appears to be the only way atm to limit the access via hooks.
+				context.query = {
+					_id: id
+				};
+				return Buildings.find(context).then((d) => d[0]);
+			},
+
+			rooms(root, { buildingId }, context) {
+				context.query = {
+					buildingId: buildingId
+				};
+				return Rooms.find(context);
+			},
+			room(root, { id }, context) {
+				context.query = {
+					_id: id
+				};
+				return Rooms.find(context).then((d) => d[0]);
+			},
+
 			panels(root, { buildingId }, context) {
 				context.query = {
-					buildingId
+					buildingId: buildingId
 				};
 				return Panels.find(context);
+			},
+			panel(root, { id }, context) {
+				context.query = {
+					_id: id
+				};
+				return Panels.find(context).then((d) => d[0]);
+			},
+
+			breakers(root, { panelId }, context) {
+				context.query = {
+					panelId: panelId
+				};
+				return Breakers.find(context);
+			},
+			breaker(root, { id }, context) {
+				context.query = {
+					_id: id
+				};
+				return Breakers.find(context).then((d) => d[0]);
+			},
+
+			roomLoads(root, { roomId }, context) {
+				context.query = {
+					roomId: roomId
+				};
+				return Loads.find(context);
+			},
+			breakerLoads(root, { breakerId }, context) {
+				context.query = {
+					breakerId: breakerId
+				};
+				return Loads.find(context);
+			},
+			toggle(root, { id }, context) {
+				context.query = {
+					_id: id
+				};
+				return Toggles.find(context).then((d) => d[0]);
 			}
+
 		},
 
 		RootMutation: {
