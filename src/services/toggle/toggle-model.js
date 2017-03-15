@@ -13,7 +13,7 @@ const toggleSchema = new Schema({
   updatedAt: { type: Date, 'default': Date.now },
 	userId: Schema.Types.ObjectId,
 	loadId: Schema.Types.ObjectId,
-	text: { type: String, required: true }
+	label: { type: String, required: true }
 });
 
 const toggleModel = mongoose.model('toggle', toggleSchema);

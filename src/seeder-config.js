@@ -129,7 +129,7 @@ const seedToggles = function(load, seed) {
 		template: {
 			'userId': () => load.userId,
 			'loadId': () => load._id,
-			'text': 'Light switch'
+			'label': 'Light switch'
 		}
 	});
 };

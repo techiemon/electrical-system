@@ -86,7 +86,7 @@ type RootQuery {
 	viewer: User
 	buildings: [Building]
 	building(id: String!): Building
-	rooms(buildingId: String!): [Room]
+	rooms(buildingId: String): [Room]
 	room(id: String!): Room
 	panels(buildingId: String!): [Panel]
 	panel(id: String!): Panel
@@ -94,6 +94,7 @@ type RootQuery {
 	breaker(id: String!): Breaker
 	roomLoads(roomId: String!): [Load]
 	breakerLoads(breakerId: String!): [Load]
+	toggles: [Toggle]
 	toggle(id: String!): Toggle
 }
 
