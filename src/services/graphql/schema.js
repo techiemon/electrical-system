@@ -94,7 +94,7 @@ type RootQuery {
 	breaker(id: String!): Breaker
 	roomLoads(roomId: String!): [Load]
 	breakerLoads(breakerId: String!): [Load]
-	toggles: [Toggle]
+	toggles(loadId: String!): [Toggle]
 	toggle(id: String!): Toggle
 }
 

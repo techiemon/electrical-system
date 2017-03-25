@@ -172,8 +172,10 @@ export default function Resolvers() {
 				};
 				return Loads.find(context);
 			},
-			toggles(root, args, context) {
-				context.query = {};
+			toggles(root, { loadId }, context) {
+				context.query = {
+					loadId: loadId
+				};
 				return Toggles.find(context);
 			},
 			toggle(root, { id }, context) {
