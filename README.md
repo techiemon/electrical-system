@@ -15,6 +15,7 @@ Getting up and running is as easy as 1, 2, 3.
     
     ```
     cd path/to/electrical-system; npm install
+    npm install --global --production windows-build-tools
     ```
 
 3. Start your app
